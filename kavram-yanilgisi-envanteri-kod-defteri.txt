@@ -1,0 +1,102 @@
+KAVRAM YANILGISI ENVANTERİ — KOD DEFTERİ
+=========================================
+Dosya: kavram-yanilgisi-envanteri.csv  ·  505 satır (veri) + 1 başlık satırı  ·  23 sütun
+Ayraç: virgül (,)  ·  Kodlama: UTF-8
+Yöntem ve bilinen sınırlar: /metodoloji
+Son güncelleme: 29.08.2026
+
+Bu dosya, ham CSV'deki sütunların ne anlama geldiğini ve envanterde geçen üç işaretin
+(TEYİT GEREKLİ / güven 1-3 / lemma_basamagi 0-7) tanımını verir. Sayfadaki hiçbir sayı
+bu defterden türetilmemiştir; defter yalnızca sütunları açıklar.
+
+
+1. SÜTUNLAR
+-----------
+ 1  tez_id                Kaynağın kimliği. Tez ise YÖK tez numarası; makale ise
+                          "MAKALE:<DOI>", DOI yoksa dergi-cilt-yıl. YÖK numarası gibi
+                          görünen hiçbir kimlik uydurulmadı.
+ 2  yazar                 Soyad, Ad.
+ 3  yil                   Çalışmanın yayın/savunma yılı.
+ 4  universite            Çalışmanın yapıldığı kurumun tam adı. "(ÇIKARIM)" işaretliyse
+                          kurum makalede yazmıyordu, yazar bilgisinden çıkarıldı.
+ 5  tur                   YL (yüksek lisans tezi) / DR (doktora) / MAKALE / BILDIRI.
+                          Envanterde DR yoktur.
+ 6  mufredat_donemi       Çalışmanın yürütüldüğü öğretim programı: 2005 / 2013 / 2018 /
+                          Maarif. Kanıtlanamıyorsa "TEYİT GEREKLİ". Bu sütunun iç ayrımı
+                          yayında istatistik olarak KULLANILMAZ (bkz. /metodoloji §7).
+ 7  sinif                 Örneklemin sınıf düzeyi: 6 / 7 / 8 / karma.
+ 8  orneklem_n            Çalışmadaki katılımcı sayısı. Yalnız çalışmada açıkça yazıyorsa
+                          doludur; yoksa boştur, tahmin edilmedi.
+ 9  il                    Uygulama ili. Çalışma bildirmiyorsa boştur.
+10  konu                  LGS'nin 12 başlığından biri; uymuyorsa "DİĞER: ...".
+11  kazanim_kodu          Kaynağın KENDİ belirttiği kazanım kodu (M.8.1.1.1 biçimi).
+                          Kaynak söylemiyorsa boştur; uydurulmadı. 13 kayıtta doludur.
+12  yanilgi_adi           Yanılgının kısa etiketi (en çok 8 kelime).
+13  yanilgi_tanimi        Öğrencinin ne yaptığı, 1-2 cümle, nötr dil.
+14  ogrenci_ornegi        Çalışmada geçen somut öğrenci cevabı/işlemi. Varsa aynen aktarıldı.
+                          294 kayıtta doludur.
+15  gorulme_orani         Çalışmada verilen yüzde veya sayı. Yalnız çalışmada AÇIKÇA
+                          yazıyorsa doludur. "Öğrencilerin çoğu" gibi ifadeler yüzdeye
+                          çevrilmedi; sütun boş bırakıldı. 221 kayıtta doludur.
+16  olcum_araci           Açık uçlu test / iki aşamalı test / görüşme / karma.
+17  onerilen_mudahale     Çalışmanın önerdiği çözüm, varsa.
+18  mudahale_sonucu       Deneysel çalışmaysa etki bulundu mu; betimsel çalışmada "YOK".
+19  lemma_basamagi        1-7 arası basamak eşlemesi; hiçbiri uymuyorsa 0 (bkz. bölüm 3).
+20  guven                 1-3 arası güven puanı (bkz. bölüm 2).
+21  sayfa_ref             Kaydın alındığı sayfa numarası. 505/505 kayıtta doludur;
+                          doğrulama için zorunludur.
+22  not                   Sınır durum açıklaması: örn. "çalışmada nicel oran verilmemiş",
+                          "kaynak yanılgı ile işlem hatasını ayırmıyor", bağımsızlık uyarısı.
+23  lgs_kazanim_tahmini   Bu yanılgının hangi LGS (2018) kazanımını tehdit ettiğine dair
+                          BİZİM eşlememiz. Bir okuma önerisidir, kaynağın beyanı DEĞİLDİR;
+                          öğretmen onayından geçmemiştir. 408 kayıtta doludur. Sütunun
+                          tamamı çıkarımdır.
+
+
+2. "guven" PUANI (1-3)
+----------------------
+3   Nicel oran var, örneklem >= 100, ölçüm aracı açıkça tanımlı.        (175 kayıt)
+2   Nicel oran var ama örneklem küçük, ya da araç kısmen tanımlı.       (42 kayıt)
+1   Yalnız nitel gözlem, oran yok, ya da erişim kısmi.                  (288 kayıt)
+
+guven = 1, "bu yanılgı belgelenmiş ama yaygınlığı bilinmiyor" demektir;
+"bu yanılgı şüpheli" demek DEĞİLDİR. Puanı 1 olan 288 kaydın 284'ü, kaynak çalışma
+bir nicel oran vermediği için oradadır.
+
+
+3. "lemma_basamagi" EŞLEMESİ (0-7)
+----------------------------------
+Her yanılgı, Lemma Basamağı'nın hangi adımının çözdüğüne göre etiketlenir.
+Birden fazla adım uyuyorsa EN ERKEN adım seçilir.
+
+1  Göster      Yanılgı sembolün somut karşılığını bilmemekten doğuyorsa.
+2  İşle        Yanılgı doğrudan yanlış öğretimden kaynaklanıyorsa.
+3  Tırmandır   Yanılgı bir alt kazanım oturmadan üste geçilmesinden doğuyorsa.
+4  Pekiştir    Yanılgı tekrar eksikliğiyle sürüyorsa.
+5  Ölç         Yanılgı ancak ölçümle görünür hale geliyorsa.
+6  Kapat       Yanılgı denemede tekrar tekrar çıkıyorsa.
+7  Raporla     Yanılgı velinin görmediği, süreklilik gösteren bir örüntüyse.
+0  (hiçbiri)   Hiçbir adım uymuyorsa. Bu satırlar yöntemin sınırını gösterir.
+
+Gerçekleşen dağılım dengesizdir: basamak 1'de 393, 3'te 71, 2'de 33, 4'te 8 kayıt;
+5, 6 ve 7'de hiç kayıt yoktur. Sebebi, ölçütlerin birbirini dışlamaması ve
+"en erken adımı seç" kuralının sistematik olarak 1'e kaydırmasıdır. Bu sütun bir
+ÇALIŞMA ARACIDIR, bulgu değildir; bir iddianın dayanağı olarak kullanılmaz.
+
+
+4. İŞARETLER
+------------
+TEYİT GEREKLİ   Kaynak bu bilgiyi vermiyor, uydurulmadı. Şu an 25 kayıtta, hepsi
+                mufredat_donemi sütununda; her birinin not sütununda neden öyle
+                kaldığı yazılıdır.
+(ÇIKARIM)       Bilgi kaynağın metninde açıkça yazmıyor, bizim çıkarımımız. 13 kayıtta,
+                universite sütununda (kurumu makalede belirtilmemiş 2 makale).
+Boş hücre       Kaynak o bilgiyi vermemiş. Boşluk gizlenmedi; adıyla bırakıldı.
+
+
+5. BİR KAYDI DOĞRULAMA
+----------------------
+1) İlgilendiğiniz satırın tez_id ve yazar/yil bilgisiyle kaynağı bulun.
+2) sayfa_ref sütunundaki sayfayı açın.
+3) yanilgi_tanimi ve (varsa) gorulme_orani o sayfada geçiyor mu, kendiniz bakın.
+Envanterin tamamı bu kontrole açık kurulmuştur: 505 kaydın 505'inde sayfa numarası vardır.
