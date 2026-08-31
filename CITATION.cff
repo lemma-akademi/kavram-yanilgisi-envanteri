@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Bu veri setini kullanıyorsanız lütfen aşağıdaki gibi atıf yapın."
+title: "Kavram Yanılgısı Envanteri"
+type: dataset
+authors:
+  - family-names: "Erin"
+    given-names: "Muhammed"
+    orcid: "https://orcid.org/0009-0002-0874-9676"
+version: 1.0.0
+doi: 10.5281/zenodo.22180687
+date-released: 2026-08-30
+url: "https://github.com/lemma-akademi/kavram-yanilgisi-envanteri"
+repository-code: "https://github.com/lemma-akademi/kavram-yanilgisi-envanteri"
+license: CC-BY-4.0
+abstract: >-
+  Bu envanter, tam metnine erişilen 31 çalışmanın — 11 yüksek lisans tezi ve
+  20 dergi makalesi — taranmasıyla derlenmiştir. 505 kayıt içerir; her kaydın
+  alındığı sayfa numarası bellidir (505/505) ve nicel oranı olan kayıtların
+  oranı mekanik olarak doğrulanmıştır (221/221). Bu bir Türkiye taraması
+  değildir ve yaygınlık iddiası içermez.
+keywords:
+  - matematik eğitimi
+  - kavram yanılgısı
+  - LGS
+  - eğitim veri seti
