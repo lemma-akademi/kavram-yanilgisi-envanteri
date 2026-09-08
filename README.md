@@ -27,7 +27,7 @@ sayfa numarası bellidir (505/505) ve nicel oranı olan kayıtların oranı meka
 olarak doğrulanmıştır (221/221). Bu bir Türkiye taraması değildir ve yaygınlık
 iddiası içermez.
 
-- **Ham veri:** `kavram-yanilgisi-envanteri.csv` (505 satır, 23 sütun)
+- **Ham veri:** `kavram-yanilgisi-envanteri.csv` (505 satır, 24 sütun)
 - **Kod defteri:** `kavram-yanilgisi-envanteri-kod-defteri.txt`
 - **Yöntem, eleme ölçütleri ve bilinen sınırlar:** https://lemmaakademi.com/metodoloji
 - **DOI (Zenodo):** https://doi.org/10.5281/zenodo.22180687
